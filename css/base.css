@@ -1,0 +1,108 @@
+/* ==========================================================
+   base.css · Tokens de diseño, reset y layout general
+   ========================================================== */
+:root {
+  --bg: #0b0f1a;
+  --bg-elev: #111827;
+  --surface: #151c2e;
+  --surface-2: #1b2438;
+  --border: #263049;
+  --border-strong: #34415f;
+  --text: #e8ecf5;
+  --text-muted: #94a0ba;
+  --text-faint: #66728f;
+
+  --accent: #6366f1;
+  --accent-hover: #7c7ff5;
+  --accent-soft: rgba(99, 102, 241, .14);
+  --cyan: #22d3ee;
+
+  --pendiente: #f59e0b;
+  --proceso: #38bdf8;
+  --resuelta: #34d399;
+  --danger: #f43f5e;
+
+  --prio-alta: #f43f5e;
+  --prio-media: #f59e0b;
+  --prio-baja: #64748b;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 10px 30px -12px rgba(0, 0, 0, .6);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  background:
+    radial-gradient(900px 480px at 85% -10%, rgba(99, 102, 241, .18), transparent 60%),
+    radial-gradient(700px 400px at -10% 10%, rgba(34, 211, 238, .08), transparent 60%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+.container { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* ---------- Header ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 15, 26, .75);
+  border-bottom: 1px solid var(--border);
+}
+.topbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .9rem; }
+.brand { display: flex; align-items: center; gap: .8rem; }
+.brand__logo {
+  width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  box-shadow: 0 6px 18px -6px var(--accent);
+}
+.brand__logo svg { width: 20px; height: 20px; color: #fff; }
+.brand__name { font-weight: 700; letter-spacing: -.01em; }
+.brand__sub { font-size: .78rem; color: var(--text-muted); }
+
+/* ---------- Hero / stats ---------- */
+.hero { padding-block: 2.4rem 1.4rem; }
+.hero__title { font-size: clamp(1.6rem, 3.2vw, 2.2rem); letter-spacing: -.03em; font-weight: 800; }
+.hero__title span { background: linear-gradient(90deg, var(--accent-hover), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero__lead { margin-top: .5rem; color: var(--text-muted); max-width: 56ch; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; margin-top: 1.6rem; }
+.stat {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1rem 1.1rem; position: relative; overflow: hidden;
+}
+.stat::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--c, var(--accent)); }
+.stat__label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+.stat__value { font-size: 1.9rem; font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin: 2rem 0 1rem; }
+.section-head h2 { font-size: 1.15rem; letter-spacing: -.01em; }
+.section-head p { color: var(--text-muted); font-size: .88rem; }
+
+.footer { margin-top: 4rem; padding-block: 1.6rem; border-top: 1px solid var(--border); color: var(--text-faint); font-size: .82rem; }
+.footer__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .brand__sub { display: none; }
+}
