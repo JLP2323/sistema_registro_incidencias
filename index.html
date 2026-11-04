@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sistema de registro de incidencias · GCS UNEMI" />
+  <title>Incidencias · Sistema de registro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        </div>
+        <div>
+          <div class="brand__name">Incidencias</div>
+          <div class="brand__sub">Gestión de la Configuración del Software</div>
+        </div>
+      </div>
+      <button class="btn btn--primary" id="btn-nueva" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        Nueva incidencia
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero__title">Registra, sigue y <span>resuelve</span> incidencias.</h1>
+      <p class="hero__lead">Todo se guarda en tu navegador. Sin servidores, sin cuentas: abre, registra y avanza el estado de cada caso.</p>
+
+      <div class="stats" aria-label="Resumen de incidencias">
+        <div class="stat" style="--c: var(--accent)"><div class="stat__label">Total</div><div class="stat__value" id="stat-total">0</div></div>
+        <div class="stat" style="--c: var(--pendiente)"><div class="stat__label">Pendientes</div><div class="stat__value" id="stat-pendiente">0</div></div>
+        <div class="stat" style="--c: var(--proceso)"><div class="stat__label">En proceso</div><div class="stat__value" id="stat-proceso">0</div></div>
+        <div class="stat" style="--c: var(--resuelta)"><div class="stat__label">Resueltas</div><div class="stat__value" id="stat-resuelta">0</div></div>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <div>
+        <h2>Listado de incidencias</h2>
+        <p id="list-summary">Aún no hay registros.</p>
+      </div>
+    </div>
+
+    <section class="grid" id="lista" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>Proyecto grupal · GCS · UNEMI</span>
+      <span>Versión <strong id="app-version" style="font-family: var(--mono)">v1.0.0</strong></span>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="modal-incidencia" aria-labelledby="modal-title">
+    <div class="modal__head">
+      <div>
+        <h2 id="modal-title">Nueva incidencia</h2>
+        <p>Describe el problema con el mayor detalle posible.</p>
+      </div>
+      <button class="modal__close" type="button" id="btn-cerrar" aria-label="Cerrar">&times;</button>
+    </div>
+    <form class="form" id="form-incidencia" novalidate>
+      <div class="field">
+        <label for="titulo">Título <em>*</em></label>
+        <input class="input" id="titulo" name="titulo" maxlength="80" placeholder="Ej. El botón de guardar no responde" required />
+        <div class="field__error" data-error-for="titulo"></div>
+      </div>
+      <div class="field">
+        <label for="descripcion">Descripción <em>*</em></label>
+        <textarea class="input" id="descripcion" name="descripcion" maxlength="400" placeholder="Pasos para reproducir, resultado esperado y obtenido…" required></textarea>
+        <div class="field__error" data-error-for="descripcion"></div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="reportante">Reportado por <em>*</em></label>
+          <input class="input" id="reportante" name="reportante" maxlength="50" placeholder="Tu nombre" required />
+          <div class="field__error" data-error-for="reportante"></div>
+        </div>
+        <div class="field">
+          <label for="categoria">Categoría</label>
+          <select class="input" id="categoria" name="categoria">
+            <option>Error</option><option>Mejora</option><option>Consulta</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="prioridad">Prioridad</label>
+        <select class="input" id="prioridad" name="prioridad">
+          <option>Baja</option><option selected>Media</option><option>Alta</option>
+        </select>
+      </div>
+      <div class="form__actions">
+        <button class="btn btn--ghost" type="button" id="btn-cancelar">Cancelar</button>
+        <button class="btn btn--primary" type="submit">Registrar incidencia</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
