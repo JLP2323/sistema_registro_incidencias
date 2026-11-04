@@ -1,0 +1,97 @@
+/* ==========================================================
+   components.css · Botones, tarjetas, modal, formulario, toast
+   ========================================================== */
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .6rem 1rem; border-radius: var(--radius-sm); border: 1px solid transparent;
+  font-weight: 600; font-size: .9rem; cursor: pointer;
+  transition: transform .12s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.btn svg { width: 16px; height: 16px; }
+.btn:active { transform: translateY(1px) scale(.98); }
+.btn--primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -10px var(--accent); }
+.btn--primary:hover { background: var(--accent-hover); box-shadow: 0 10px 24px -8px var(--accent); }
+.btn--ghost { background: transparent; border-color: var(--border-strong); color: var(--text); }
+.btn--ghost:hover { background: var(--surface-2); border-color: var(--text-faint); }
+.btn--danger:hover { background: rgba(244, 63, 94, .12); border-color: var(--danger); color: var(--danger); }
+.btn--sm { padding: .4rem .7rem; font-size: .8rem; }
+
+/* ---------- Tarjetas de incidencia ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+
+.card {
+  --prio: var(--prio-baja);
+  position: relative; display: flex; flex-direction: column; gap: .8rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1rem 1.35rem; box-shadow: var(--shadow);
+  transition: transform .18s ease, border-color .18s ease;
+  animation: pop .28s ease both;
+}
+.card::before { content: ""; position: absolute; inset: 14px auto 14px 0; width: 4px; border-radius: 0 4px 4px 0; background: var(--prio); }
+.card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+.card[data-prioridad="Alta"]  { --prio: var(--prio-alta); }
+.card[data-prioridad="Media"] { --prio: var(--prio-media); }
+.card[data-prioridad="Baja"]  { --prio: var(--prio-baja); }
+
+.card__top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.card__id { font-family: var(--mono); font-size: .75rem; color: var(--text-faint); }
+.card__title { font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
+.card__desc { color: var(--text-muted); font-size: .88rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card__meta { display: flex; flex-wrap: wrap; gap: .4rem; }
+.card__foot { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: auto; padding-top: .8rem; border-top: 1px dashed var(--border); }
+.card__who { font-size: .78rem; color: var(--text-faint); }
+.card__actions { display: flex; gap: .4rem; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem; padding: .18rem .6rem;
+  border-radius: 999px; font-size: .74rem; font-weight: 600;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted);
+}
+.chip--prio { color: var(--prio); border-color: color-mix(in srgb, var(--prio) 40%, transparent); }
+
+.badge { display: inline-flex; align-items: center; gap: .4rem; padding: .22rem .65rem; border-radius: 999px; font-size: .74rem; font-weight: 700; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+.badge[data-estado="Pendiente"]  { --c: var(--pendiente); }
+.badge[data-estado="En proceso"] { --c: var(--proceso); }
+.badge[data-estado="Resuelta"]   { --c: var(--resuelta); }
+
+.empty { grid-column: 1 / -1; text-align: center; padding: 3.5rem 1rem; border: 1.5px dashed var(--border-strong); border-radius: var(--radius); color: var(--text-muted); }
+.empty__icon { font-size: 2rem; margin-bottom: .5rem; }
+.empty strong { display: block; color: var(--text); margin-bottom: .2rem; }
+
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* ---------- Modal + formulario ---------- */
+dialog.modal { width: min(560px, 100% - 2rem); padding: 0; border: 1px solid var(--border-strong); border-radius: 18px; background: var(--bg-elev); color: var(--text); box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .8); }
+dialog.modal::backdrop { background: rgba(5, 8, 16, .7); backdrop-filter: blur(4px); }
+dialog.modal[open] { animation: pop .22s ease; }
+.modal__head { display: flex; justify-content: space-between; align-items: start; padding: 1.4rem 1.5rem .6rem; }
+.modal__head h2 { font-size: 1.25rem; letter-spacing: -.02em; }
+.modal__head p { color: var(--text-muted); font-size: .86rem; margin-top: .2rem; }
+.modal__close { background: none; border: 0; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; border-radius: 8px; width: 34px; height: 34px; }
+.modal__close:hover { background: var(--surface-2); color: var(--text); }
+.form { padding: .6rem 1.5rem 1.5rem; display: grid; gap: 1rem; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: grid; gap: .35rem; }
+.field label { font-size: .8rem; font-weight: 600; color: var(--text-muted); }
+.field label em { color: var(--danger); font-style: normal; }
+.input { width: 100%; padding: .65rem .8rem; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border); transition: border-color .15s, box-shadow .15s; }
+.input::placeholder { color: var(--text-faint); }
+.input:hover { border-color: var(--border-strong); }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+textarea.input { resize: vertical; min-height: 96px; }
+.field__error { font-size: .76rem; color: var(--danger); min-height: 1em; }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+.form__actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: .4rem; }
+
+/* ---------- Toasts ---------- */
+.toasts { position: fixed; right: 1.2rem; bottom: 1.2rem; display: grid; gap: .6rem; z-index: 50; }
+.toast { display: flex; align-items: center; gap: .6rem; padding: .75rem 1rem; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border-strong); box-shadow: var(--shadow); font-size: .88rem; animation: pop .25s ease; }
+.toast::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--resuelta); }
+.toast--info::before { background: var(--proceso); }
+.toast--danger::before { background: var(--danger); }
+
+@media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
