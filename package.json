@@ -1,0 +1,13 @@
+{
+  "name": "sistema-registro-incidencias",
+  "version": "1.0.0",
+  "description": "Sistema de registro de incidencias - Proyecto GCS (UNEMI)",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}
