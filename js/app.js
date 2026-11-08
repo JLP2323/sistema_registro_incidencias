@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var APP_VERSION = 'v1.0.0';
+  var APP_VERSION = 'v1.1.0';
   var $ = function (s) { return document.querySelector(s); };
 
   var lista = $('#lista');
@@ -109,6 +109,20 @@
       toast('Incidencia eliminada', 'danger');
     }
   });
+
+  $('#filtros').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('.filter');
+    if (!btn) return;
+    filtroActual = btn.dataset.filter;
+    document.querySelectorAll('.filter').forEach(function (b) {
+      var activo = b === btn;
+      b.classList.toggle('is-active', activo);
+      b.setAttribute('aria-pressed', String(activo));
+    });
+    render();
+  });
+
+  $('#buscar').addEventListener('input', function (ev) { textoBusqueda = ev.target.value; render(); });
 
   $('#btn-nueva').addEventListener('click', abrir);
   $('#btn-cerrar').addEventListener('click', cerrar);
