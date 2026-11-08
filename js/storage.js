@@ -59,7 +59,19 @@
     };
   }
 
-  var Store = { ESTADOS: ESTADOS, listar: listar, crear: crear, avanzarEstado: avanzarEstado, eliminar: eliminar, contar: contar };
+  /* v1.1.0 · Filtrado por estado y texto */
+  function slug(estado) { return estado.toLowerCase().replace(' ', ''); }
+
+  function filtrar(lista, filtro, texto) {
+    var q = (texto || '').trim().toLowerCase();
+    return lista.filter(function (i) {
+      var porEstado = !filtro || filtro === 'todas' || slug(i.estado) === filtro;
+      var porTexto = !q || i.titulo.toLowerCase().indexOf(q) !== -1 || i.reportante.toLowerCase().indexOf(q) !== -1;
+      return porEstado && porTexto;
+    });
+  }
+
+  var Store = { ESTADOS: ESTADOS, listar: listar, crear: crear, avanzarEstado: avanzarEstado, eliminar: eliminar, contar: contar, slug: slug, filtrar: filtrar };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = Store;
   else root.Store = Store;
