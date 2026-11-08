@@ -50,13 +50,26 @@
       </div>
     </div>
 
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filtrar por estado" id="filtros">
+        <button class="filter is-active" type="button" data-filter="todas" aria-pressed="true">Todas <span class="filter__count" data-count="todas">0</span></button>
+        <button class="filter" type="button" data-filter="pendiente" aria-pressed="false" style="--c: var(--pendiente)">Pendiente <span class="filter__count" data-count="pendiente">0</span></button>
+        <button class="filter" type="button" data-filter="en-proceso" aria-pressed="false" style="--c: var(--proceso)">En proceso <span class="filter__count" data-count="en-proceso">0</span></button>
+        <button class="filter" type="button" data-filter="resuelta" aria-pressed="false" style="--c: var(--resuelta)">Resuelta <span class="filter__count" data-count="resuelta">0</span></button>
+      </div>
+      <div class="search">
+        <label class="sr-only" for="buscar">Buscar incidencias</label>
+        <input class="input" id="buscar" type="search" placeholder="Buscar por título o reportante…" autocomplete="off" />
+      </div>
+    </div>
+
     <section class="grid" id="lista" aria-live="polite"></section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
       <span>Proyecto grupal · GCS · UNEMI</span>
-      <span>Versión <strong id="app-version" style="font-family: var(--mono)">v1.0.0</strong></span>
+      <span>Versión <strong id="app-version" style="font-family: var(--mono)">v1.1.0</strong></span>
     </div>
   </footer>
 
