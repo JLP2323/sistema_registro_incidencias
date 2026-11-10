@@ -54,7 +54,9 @@
 
     lista.innerHTML = datos.length
       ? datos.map(tarjeta).join('')
-      : '<div class="empty"><div class="empty__icon">📭</div><strong>Sin incidencias todavía</strong>Pulsa «Nueva incidencia» para registrar la primera.</div>';
+      : (c.total
+        ? '<div class="empty"><div class="empty__icon">🔍</div><strong>Sin resultados</strong>No hay incidencias que coincidan con el filtro o la búsqueda.</div>'
+        : '<div class="empty"><div class="empty__icon">📭</div><strong>Sin incidencias todavía</strong>Pulsa «Nueva incidencia» para registrar la primera.</div>');
   }
 
   /* ---------- Modal y formulario ---------- */
