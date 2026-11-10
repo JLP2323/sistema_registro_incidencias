@@ -60,7 +60,7 @@
   }
 
   /* v1.1.0 · Filtrado por estado y texto */
-  function slug(estado) { return estado.toLowerCase().replace(' ', ''); }
+  function slug(estado) { return estado.toLowerCase().replace(/\s+/g, '-'); }
 
   function filtrar(lista, filtro, texto) {
     var q = (texto || '').trim().toLowerCase();
