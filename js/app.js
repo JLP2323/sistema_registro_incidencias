@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var APP_VERSION = 'v1.1.0';
+  var APP_VERSION = 'v1.1.1';
   var $ = function (s) { return document.querySelector(s); };
 
   var lista = $('#lista');
