@@ -2,6 +2,17 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionamiento [SemVer](https://semver.org/lang/es/) (`MAJOR.MINOR.PATCH`).
 
+## [1.1.1] - 2026-11-10
+
+Corrección de error detectado en v1.1.0 (**Issue #1**, responsable: Kevin Barboza).
+
+### Corregido
+- El filtro **En proceso** devolvía siempre una lista vacía: `Store.slug()` generaba `enproceso` en lugar de `en-proceso`. Ahora se reemplazan todos los espacios por guion.
+- Mensaje «Sin resultados» cuando el filtro o la búsqueda no coinciden (antes se mostraba el mensaje de «Sin incidencias todavía»).
+
+### Añadido
+- Pruebas automatizadas (`tests/filtro.test.js`) integradas en `npm run validate` y en GitHub Actions.
+
 ## [1.1.0] - 2026-11-09
 
 Funcionalidad avanzada: filtrado por estado.
