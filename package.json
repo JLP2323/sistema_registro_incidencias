@@ -1,6 +1,6 @@
 {
   "name": "sistema-registro-incidencias",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Sistema de registro de incidencias - Proyecto GCS (UNEMI)",
   "private": true,
   "type": "commonjs",
