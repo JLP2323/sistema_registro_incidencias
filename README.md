@@ -5,7 +5,7 @@
 
 Aplicación web **100 % estática** (HTML5 + CSS3 + JavaScript puro, sin base de datos ni servidor) para registrar, listar y dar seguimiento a incidencias. Los datos se guardan en el `localStorage` del navegador.
 
-🌐 **Demo (GitHub Pages):** `https://<usuario>.github.io/<repositorio>/`
+🌐 **Demo (GitHub Pages):** `https://JLP2323.github.io/sistema_registro_incidencias/`
 
 ## ✨ Funcionalidades
 
@@ -22,8 +22,8 @@ Consulta el detalle en [CHANGELOG.md](CHANGELOG.md).
 Requisitos: un navegador moderno. Opcionalmente Node.js ≥ 18 (validación) y Python 3 (servidor local).
 
 ```bash
-git clone https://github.com/<usuario>/<repositorio>.git
-cd <repositorio>
+git clone https://github.com/JLP2323/sistema_registro_incidencias.git
+cd sistema_registro_incidencias
 
 # Opción A: abrir directamente index.html en el navegador
 # Opción B: servidor local
@@ -69,3 +69,4 @@ Más detalle: [docs/FLUJO_DE_TRABAJO.md](docs/FLUJO_DE_TRABAJO.md) · [docs/PULL
 | Kevin Barboza Cargua | kbarbozac@unemi.edu.ec | Estilos, filtro por estado (v1.1.0), corrección v1.1.1 |
 | Dayanara Rosario Guerrero Jara | dayaguerrero361@gmail.com | Estructura HTML/UX, changelog, documentación |
 | Javier Quinteros Pacheco | javicsoftcode@gmail.com | Lógica JS, validación, pruebas |
+

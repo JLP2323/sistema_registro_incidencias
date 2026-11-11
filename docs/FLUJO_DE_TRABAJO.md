@@ -55,3 +55,4 @@ git config user.email "correo-de-su-cuenta-github"
 | Javier Quinteros Pacheco | javicsoftcode@gmail.com |
 
 Verificación: `git shortlog -sne --all`
+

@@ -4,7 +4,7 @@
 
 ```bash
 # Crear un repositorio VACÍO en GitHub (sin README) y luego:
-git remote add origin https://github.com/<usuario>/<repositorio>.git
+git remote add origin https://github.com/JLP2323/sistema_registro_incidencias.git
 git push -u origin main
 git push origin --all          # ramas feature/*, fix/*, release/*, docs/*
 git push origin --tags         # v1.0.0, v1.1.0, v1.1.1
@@ -20,7 +20,7 @@ Con GitHub CLI (`gh auth login` previamente) o desde la interfaz web, usando los
 
 ```bash
 gh issue create --title "El filtro «En proceso» no muestra ninguna incidencia" \
-  --body-file docs/ISSUES.md --label bug --assignee <usuario-github-de-Kevin>
+  --body-file docs/ISSUES.md --label bug --assignee Barbozakevin
 
 gh pr create --base main --head fix/issue-1-filtro-en-proceso \
   --title "fix: el filtro «En proceso» no muestra resultados" --body "Closes #1"
@@ -43,3 +43,4 @@ gh release create v1.1.1 --title "v1.1.1" --notes "Corrección del filtro «En p
 | ¿Cómo se resolvió el Issue #1? | [ISSUES.md](ISSUES.md): rama `fix/issue-1-*`, test que falla → fix → PR #10 → v1.1.1 |
 | ¿Cómo ejecuto la app? | Abrir `index.html` o `npm start` |
 | Demostrar el bug | `git checkout v1.1.0`, filtrar «En proceso» → vacío; `git checkout v1.1.1` → funciona |
+
