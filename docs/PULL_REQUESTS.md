@@ -15,6 +15,7 @@ Registro de los Pull Requests del proyecto. Cada uno se integra con `--no-ff` pa
 | 9 | `docs/documentacion-proyecto` → `main` | Julissa Lescano / Dayanara Guerrero | Javier Quinteros | Flujo de trabajo, PRs, registro del Issue #1 | — |
 | 10 | `fix/issue-1-filtro-en-proceso` → `main` | Javier Quinteros / Kevin Barboza | Dayanara Guerrero | Prueba que reproduce el bug + corrección (**Closes #1**) | v1.1.1 |
 | 11 | `release/v1.1.1` → `main` | Julissa Lescano / Dayanara Guerrero | Kevin Barboza | Notas de versión 1.1.1 y cierre del Issue #1 | **v1.1.1** |
+| 12 | `fix/ui-formulario-responsive` → `main` | Kevin Barboza | Dayanara Guerrero | Alineación del select de categoría y diseño responsive (solo CSS) | — (posterior a v1.1.1) |
 
 ## Plantilla de PR
 Ver [`.github/pull_request_template.md`](../.github/pull_request_template.md): descripción, tipo, Issue relacionado (`Closes #n`) y checklist (validación, prueba manual, changelog, revisión).
@@ -30,3 +31,4 @@ Ver [`.github/pull_request_template.md`](../.github/pull_request_template.md): d
 
 ## Cómo abrir estos PR en GitHub
 Al subir el repositorio (`git push origin --all --tags`) las ramas quedan visibles. Para que los PR aparezcan en la pestaña *Pull Requests* de GitHub, cree cada uno desde su rama con el título y descripción de esta tabla (ver [guía de entrega](ENTREGA.md)).
+
