@@ -2,11 +2,6 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionamiento [SemVer](https://semver.org/lang/es/) (`MAJOR.MINOR.PATCH`).
 
-## [Sin publicar]
-
-### Mejorado
-- UX móvil: `theme-color` para que la barra del navegador coincida con el tema oscuro de la aplicación (PR `feature/mejora-ux`).
-
 ## [1.1.1] - 2026-11-10
 
 Corrección de error detectado en v1.1.0 (**Issue #1**, responsable: Kevin Barboza).
