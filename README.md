@@ -1,13 +1,13 @@
-# 🚨 Sistema de Registro de Incidencias
+# Sistema de Registro de Incidencias
 
 > Proyecto grupal · **Gestión de la Configuración del Software** · UNEMI
 > *Gestión de versiones y automatización del despliegue de una aplicación mediante GitHub.*
 
 Aplicación web **100 % estática** (HTML5 + CSS3 + JavaScript puro, sin base de datos ni servidor) para registrar, listar y dar seguimiento a incidencias. Los datos se guardan en el `localStorage` del navegador.
 
-🌐 **Demo (GitHub Pages):** `https://JLP2323.github.io/sistema_registro_incidencias/`
+ **Demo (GitHub Pages):** `https://JLP2323.github.io/sistema_registro_incidencias/`
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 | Versión | Funcionalidad |
 |---|---|
@@ -17,7 +17,7 @@ Aplicación web **100 % estática** (HTML5 + CSS3 + JavaScript puro, sin base de
 
 Consulta el detalle en [CHANGELOG.md](CHANGELOG.md).
 
-## ▶️ Ejecución local
+## Ejecución local
 
 Requisitos: un navegador moderno. Opcionalmente Node.js ≥ 18 (validación) y Python 3 (servidor local).
 
@@ -34,7 +34,7 @@ npm start            # equivale a: python -m http.server 8080
 npm run validate
 ```
 
-## 🗂️ Estructura
+## Estructura
 
 ```
 ├── index.html
@@ -46,7 +46,7 @@ npm run validate
 └── .github/        workflows/deploy.yml · plantillas de Issue y PR
 ```
 
-## 🔀 Control de versiones
+##  Control de versiones
 
 - `main`: rama estable; **cada push despliega automáticamente** en GitHub Pages si la validación pasa.
 - `feature/*`: nuevas funcionalidades · `fix/*`: corrección de errores. Se integran vía **Pull Request** hacia `main`.
@@ -57,13 +57,13 @@ Evidencias de entrega: [docs/EVIDENCIAS.md](docs/EVIDENCIAS.md) · Releases: [do
 
 Más detalle: [docs/FLUJO_DE_TRABAJO.md](docs/FLUJO_DE_TRABAJO.md) · [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) · [docs/ISSUES.md](docs/ISSUES.md)
 
-## ⚙️ Despliegue automatizado
+##  Despliegue automatizado
 
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): al hacer push a `main` ejecuta el job **validate** (estructura, referencias, sintaxis JS, coherencia de versión, pruebas) y, si pasa, el job **deploy** publica en **GitHub Pages**.
 
 **Activación (una sola vez):** *Settings → Pages → Build and deployment → Source: **GitHub Actions***.
 
-## 👥 Equipo
+##  Equipo
 
 | Integrante | Correo GitHub | Aporte principal |
 |---|---|---|
