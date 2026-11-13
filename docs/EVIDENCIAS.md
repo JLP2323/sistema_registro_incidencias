@@ -60,12 +60,11 @@ Tabla completa con autor, revisor y descripción en [PULL_REQUESTS.md](PULL_REQU
 
 Comando: `git log --merges --graph --oneline --decorate`
 
-**Enlaces de los PR creados en GitHub** (completar al abrirlos):
+**Pull Request real en GitHub** (la numeración #1–#12 de arriba es la del historial local; en GitHub el Issue es #1 y este PR es #2):
 
-| PR | Enlace |
-|---|---|
-| Corrección Issue #1 (`Closes #1`) | https://github.com/JLP2323/sistema_registro_incidencias/pull/__ |
-| _otros_ | |
+| PR | Rama → destino | Descripción | Enlace |
+|---|---|---|---|
+| #2 | `feature/mejora-ux` → `main` | Mejora UX (`theme-color`) y nota en CHANGELOG · incluye `Closes #1` | https://github.com/JLP2323/sistema_registro_incidencias/pull/2 |
 
 ## 4. Issue de mejora continua
 - Texto para publicar: [ISSUE_1_CUERPO.md](ISSUE_1_CUERPO.md) · Registro completo con solución: [ISSUES.md](ISSUES.md)
@@ -73,7 +72,13 @@ Comando: `git log --merges --graph --oneline --decorate`
 - Enlace del Issue: https://github.com/JLP2323/sistema_registro_incidencias/issues/1
 
 ## 5. Releases
-Notas listas en [RELEASES.md](RELEASES.md). Enlace: https://github.com/JLP2323/sistema_registro_incidencias/releases
+Notas en [RELEASES.md](RELEASES.md). Publicados en GitHub:
+
+| Release | Enlace |
+|---|---|
+| v1.0.0 | https://github.com/JLP2323/sistema_registro_incidencias/releases/tag/v1.0.0 |
+| v1.1.0 | https://github.com/JLP2323/sistema_registro_incidencias/releases/tag/v1.1.0 |
+| v1.1.1 (Latest) | https://github.com/JLP2323/sistema_registro_incidencias/releases/tag/v1.1.1 |
 
 ## 6. Despliegue
 - Workflow: [deploy.yml](../.github/workflows/deploy.yml) · Ejecuciones: https://github.com/JLP2323/sistema_registro_incidencias/actions
@@ -89,3 +94,4 @@ Notas listas en [RELEASES.md](RELEASES.md). Enlace: https://github.com/JLP2323/s
 
 ## 8. Nota de transparencia
 El historial se preparó localmente con fechas escalonadas y los PR #1–#12 son merges locales (`--no-ff`) con la convención «Merge pull request #n». En GitHub solo cuentan como Pull Requests los abiertos desde su interfaz; por eso la tabla de la sección 3 debe completarse con los enlaces reales.
+
