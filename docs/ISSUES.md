@@ -5,8 +5,8 @@
 | Campo | Valor |
 |---|---|
 | Tipo | 🐞 Error (`bug`) |
-| Reportado por | Dayanara Rosario Guerrero Jara |
-| **Responsable asignado** | **Kevin Barboza Cargua** (autor de la función `filtrar`) |
+| Reportado por | Dayanara Rosario Guerrero Jara (@DayaGuerrero2005) |
+| **Responsable asignado** | **Kevin Barboza Cargua** (`@Barbozakevin`, autor de la función `filtrar`) |
 | Versión afectada | v1.1.0 |
 | Prioridad | Alta |
 | Estado | 🟢 Cerrado en **v1.1.1** (PR #10) |

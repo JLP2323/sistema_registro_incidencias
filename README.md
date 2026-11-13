@@ -53,6 +53,8 @@ npm run validate
 - Commits con [Conventional Commits](https://www.conventionalcommits.org/es/) (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, `chore:`).
 - Versionamiento semántico `MAJOR.MINOR.PATCH` con etiquetas `v1.0.0`, `v1.1.0`, `v1.1.1`.
 
+Evidencias de entrega: [docs/EVIDENCIAS.md](docs/EVIDENCIAS.md) · Releases: [docs/RELEASES.md](docs/RELEASES.md)
+
 Más detalle: [docs/FLUJO_DE_TRABAJO.md](docs/FLUJO_DE_TRABAJO.md) · [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) · [docs/ISSUES.md](docs/ISSUES.md)
 
 ## ⚙️ Despliegue automatizado
