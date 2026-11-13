@@ -60,3 +60,4 @@ git checkout v1.1.0                     # filtrar «En proceso» → vacío (bug
 git checkout v1.1.1                     # filtrar «En proceso» → correcto
 git checkout main
 ```
+

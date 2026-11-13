@@ -18,3 +18,4 @@ labels: bug
 vX.Y.Z
 
 ## Responsable asignado
+

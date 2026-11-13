@@ -14,3 +14,4 @@ Closes #
 - [ ] Probado manualmente en el navegador
 - [ ] CHANGELOG y versión actualizados (si aplica)
 - [ ] Revisado por al menos otro integrante
+

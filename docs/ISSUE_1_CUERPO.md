@@ -28,3 +28,4 @@ v1.1.0
 
 ## Plan de trabajo
 Rama `fix/issue-1-filtro-en-proceso` → Pull Request con `Closes #1` → release v1.1.1.
+

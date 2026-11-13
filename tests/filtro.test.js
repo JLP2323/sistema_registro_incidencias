@@ -29,3 +29,4 @@ test('filtrar combina estado y texto', () => {
   assert.strictEqual(Store.filtrar(datos, 'resuelta', 'ana').length, 1);
   assert.strictEqual(Store.filtrar(datos, 'en-proceso', 'ana').length, 0);
 });
+

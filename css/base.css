@@ -106,3 +106,4 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .brand__sub { display: none; }
 }
+
